@@ -11,8 +11,8 @@ RUN apt update && apt -y install postgresql-13 postgresql-client-13 patroni pyth
 RUN mkdir /pg_data && chown postgres:postgres /pg_data
 
 # Install consul
-RUN wget --quiet https://releases.hashicorp.com/consul/1.9.3/consul_1.9.3_linux_amd64.zip
-RUN unzip consul_1.9.3_linux_amd64.zip && mv consul /usr/local/bin/ && rm consul_1.9.3_linux_amd64.zip
+RUN wget --quiet https://releases.hashicorp.com/consul/1.10.3/consul_1.10.3_linux_amd64.zip
+RUN unzip consul_1.10.3_linux_amd64.zip && mv consul /usr/local/bin/ && rm consul_1.10.3_linux_amd64.zip
 RUN mkdir -p /etc/consul/certs && mkdir -p /consul/data
 
 COPY ./bootstrap-patroni.sh /usr/bin/bootstrap-patroni.sh
